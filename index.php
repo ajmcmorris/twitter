@@ -1,3 +1,6 @@
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" type="text/css" rel="stylesheet">
 <?php
 require_once('TwitterAPIExchange.php');
 // Twitter OAuth Config options
@@ -18,15 +21,27 @@ $string = json_decode($twitter->setGetfield($getfield)
 ->buildOauth($url, $requestMethod)
 ->performRequest(),$assoc = TRUE);
 if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
+echo '<div class="container-fluid">';
+echo '<section class="col-md-6 col-md-offset-3">';
 foreach($string as $items)
-    {
-        echo "Time and Date of Tweet: ".$items['created_at']."<br />";
-        echo "Tweet: ". $items['text']."<br />";
-        echo "Tweeted by: ". $items['user']['name']."<br />";
-        echo "Screen name: ". $items['user']['screen_name']."<br />";
-        echo "Followers: ". $items['user']['followers_count']."<br />";
-        echo "Friends: ". $items['user']['friends_count']."<br />";
-        echo "Listed: ". $items['user']['listed_count']."<br /><hr />";
-    }
+    {   
+        echo '<div class="my-tweet">';
+    	echo '<div class="row">';
+        echo "<img src=".$items['user']['profile_image_url']."/>";
+        echo '<dl>';
+        echo  "<dt>".$items['user']['name']."</dt>";
+        echo  "<dd>"."@".$items['user']['screen_name']."</dd>";
+        echo '</dl>';
+        echo "<p>".$items['text']."</p>";      
+        echo $items['created_at'];
+        echo '</div>';
+        echo '</div>';
 
+    }
+echo '</section>';
+echo '</div>';
 ?>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js"></script>

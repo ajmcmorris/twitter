@@ -1,3 +1,11 @@
-
+section .my-tweet {
+  margin: 15px 0; }
+  section .my-tweet dl {
+    display: inline-block;
+    margin: 0 0 6px 11px; }
+  section .my-tweet img {
+    vertical-align: bottom; }
+  section .my-tweet p {
+    margin: 10px 0; }
 
 /*# sourceMappingURL=styles.css.map */
