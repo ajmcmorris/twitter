@@ -2,6 +2,7 @@
 section{
 	.my-tweet {
 	    margin: 15px 0;
+
 		    dl{
 			display: inline-block;
 			margin: 0 0 6px 11px;
@@ -11,6 +12,9 @@ section{
 		}
 		p {
 		    margin: 10px 0;
+		}
+		i{
+			margin: 0 5px;
 		}
 	}	
 }

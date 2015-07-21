@@ -1,6 +1,8 @@
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/styles.css" type="text/css" rel="stylesheet">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <?php
 require_once('TwitterAPIExchange.php');
 // Twitter OAuth Config options
@@ -34,9 +36,9 @@ foreach($string as $items)
         echo '</dl>';
         echo "<p>".$items['text']."</p>";      
         echo $items['created_at'];
+        echo '<p><a href="#"><i class="fa fa-reply"></a></i> <a href="#"><i class="fa fa-retweet"></i>'.$items['retweet_count']."</p></a>"; 
         echo '</div>';
         echo '</div>';
-
     }
 echo '</section>';
 echo '</div>';

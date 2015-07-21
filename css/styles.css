@@ -7,5 +7,7 @@ section .my-tweet {
     vertical-align: bottom; }
   section .my-tweet p {
     margin: 10px 0; }
+  section .my-tweet i {
+    margin: 0 5px; }
 
 /*# sourceMappingURL=styles.css.map */
